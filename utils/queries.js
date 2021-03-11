@@ -4,13 +4,16 @@ const inquirer = require("inquirer");
 require('dotenv').config();
 const process = require("process");
 const { EMLINK } = require('constants');
+
+
 // create the connection to database
 const connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
-    user: process.env.user,
-    password: process.env.password,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     database: 'company',
+    
 });
 
 connection.connect(err => {
